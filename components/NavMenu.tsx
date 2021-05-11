@@ -35,6 +35,13 @@ const NavMenu = () => (
         </a>
       </Link>
     </li>
+    <li>
+      <Link href="/[[...slug]]" as="/developer-landingpage">
+        <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
+          Landingpage for developers
+        </a>
+      </Link>
+    </li>
   </ul>
 );
 
