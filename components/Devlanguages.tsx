@@ -6,15 +6,22 @@ import { useContext } from 'react';
 import { TalksContext } from './TalksContext';
 import { Personalize } from '@uniformdev/optimize-tracker-react';
 import { contentstackOptimizeListReader } from '@uniformdev/optimize-tracker-contentstack';
+import { trace } from 'node:console';
 
 
 export const DevLanguages = () => {
 
   const { tracker } = useUniformTracker();
 
-  const TypescriptClick = () => {
-
+  const OnEnrichmentClick = async (EnrichmentLanguage) => {
+      const tracked = await tracker.addEnrichment({
+        name: 'Language',
+        value: EnrichmentLanguage,
+      })
+      
+      console.log(tracked);
   };
+
 
     return (
       <>
@@ -28,15 +35,15 @@ export const DevLanguages = () => {
           </div>
         </div>
         <a href="#" className="flex flex-wrap no-underline hover:no-underline">
-          <div className="w-full font-bold text-xl text-gray-800 px-6">Click here!</div>
+          <div className="w-full font-bold text-xl text-gray-800 px-6">We would like to know your preferences</div>
         </a>
         <div className="text-gray-800 px-6 pb-6 text-sm">
         <button
                   type="button"
-                  onClick={TypescriptClick}
+                  onClick={ () => OnEnrichmentClick('Typescript')}
                   className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg"
                 >
-                  Interested in Typescript
+                  Typescript
                 </button>
         </div>
       </div>
@@ -50,9 +57,17 @@ export const DevLanguages = () => {
           </div>
         </div>
         <a href="#" className="flex flex-wrap no-underline hover:no-underline">
-          <div className="w-full font-bold text-xl text-gray-800 px-6">Click here!</div>
+          <div className="w-full font-bold text-xl text-gray-800 px-6">We would like to know your preferences</div>
         </a>
-        <div className="text-gray-800 px-6 pb-6 text-sm"/>
+        <div className="text-gray-800 px-6 pb-6 text-sm">
+        <button
+                  type="button"
+                  onClick={ () => OnEnrichmentClick('Javascript')}
+                  className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg"
+                >
+                  Javascript
+                </button>
+        </div>
       </div>
     </div>
 
@@ -64,9 +79,17 @@ export const DevLanguages = () => {
           </div>
         </div>
         <a href="#" className="flex flex-wrap no-underline hover:no-underline">
-          <div className="w-full font-bold text-xl text-gray-800 px-6">Click here!</div>
+          <div className="w-full font-bold text-xl text-gray-800 px-6">We would like to know your preferences</div>
         </a>
-        <div className="text-gray-800 px-6 pb-6 text-sm"/>
+        <div className="text-gray-800 px-6 pb-6 text-sm">
+        <button
+                  type="button"
+                  onClick={ () => OnEnrichmentClick('Csharp')}
+                  className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg"
+                >
+                  C#
+                </button>
+        </div>
       </div>
     </div>
     </div>
