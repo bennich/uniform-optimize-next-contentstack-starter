@@ -9,6 +9,7 @@ import { ComponentMapping } from '../lib/ComponentMapping';
 import TalkList from '../components/TalkList';
 import { RegisterForm } from '../components/RegisterForm';
 import { WhyAttend } from '../components/WhyAttend';
+import {DevLanguages} from '../components/Devlanguages';
 
 const componentMapping: ComponentMapping = {
   hero: MainHero,
@@ -16,6 +17,7 @@ const componentMapping: ComponentMapping = {
   personalized_hero: PersonalizedHero,
   talks_list: TalkList,
   registration_form: RegisterForm,
+  developer_languages: DevLanguages,
   why_attend: WhyAttend,
 };
 
