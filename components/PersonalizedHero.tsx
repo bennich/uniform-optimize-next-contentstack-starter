@@ -27,6 +27,7 @@ const PersonalizedHeroLoading = () => {
 
 export const PersonalizedHero: React.FC<Entry<PersonalizedHeroFields>> = ({ unfrm_opt_p13n_list }) => {
   const variations = contentstackOptimizeListReader(unfrm_opt_p13n_list);
+  console.log(variations)
   return (
     <Personalize
       name="Personalized Hero"
